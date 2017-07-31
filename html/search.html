@@ -1,0 +1,27 @@
+
+<div class="col-sm-12">
+  <div class="col-sm-6">
+    <div class="input-group">
+      <input type="text" ng-model="asyncSelected" placeholder="Search for Planets" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingPlanets" typeahead-no-results="noResults" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-primary m-l-2" ng-click="getLocation(asyncSelected)" type="submit">Submit</button>
+      </span>
+    </div>
+      <div class="makeWhite">
+      <div ng-show="loadingPlanets" class="glyphicon glyphicon-refresh"></div>
+      <div ng-show="noResults">
+        <i class="glyphicon glyphicon-remove"></i> No Results Found
+      </div>
+      </div>
+  </div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-12 pad15">
+    <planet ng-repeat="planet in firstsetplanets" name="planet"></planet>
+
+    <!--pagiantion-->
+    <div class="col-sm-12 text-right">
+      <ul uib-pagination boundary-links="true" total-items="totalItems" ng-change="pageChanged()" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+    </div>
+    
+  </div>
+</div>
