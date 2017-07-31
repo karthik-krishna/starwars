@@ -4,5 +4,8 @@ app.controller('homeController', function($scope, $rootScope, $http, $location, 
       localStorage.setItem("username", username);
       $location.path('search')
     }
+    if(localStorage.getItem("username")!=null || localStorage.getItem("username")!=undefined ){
+      $location.path('search')
+    }
     
 });

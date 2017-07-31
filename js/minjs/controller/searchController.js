@@ -35,5 +35,10 @@ app.controller('searchController', function($scope, $rootScope, $http, $location
   $scope.pageChanged = function() {
     $scope.loadplanets($scope.currentPage)
   };
+
+  $scope.logout=function(){
+  	localStorage.clear();
+    $location.path('home');
+  }
    
 });
