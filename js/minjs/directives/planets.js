@@ -1,5 +1,5 @@
 app.directive('planet', function() {
-            var directive = {};
+            let directive = {};
             directive.restrict = 'E';
             directive.template = '<div class="col-sm-4" >'+
 							      '<div class="planetBorder col-sm-12">'+
@@ -20,7 +20,7 @@ app.directive('planet', function() {
             directive.compile = function(element, attributes) {
                //element.css("border", "1px solid #cccccc");
                
-               var linkFunction = function($scope, element, attributes) {
+               let linkFunction = function($scope, element, attributes) {
 
                	if(Number($scope.planet.population)){
 								element.html('<div class="col-sm-4" >'+
